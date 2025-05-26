@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2qf60dilctsk"]
+
+[ext_resource type="Texture2D" uid="uid://bu2sl41kohrc1" path="res://Screenshot 2025-05-27 091105.png" id="1_28flt"]
+
+[node name="Main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576.25, 324.5)
+scale = Vector2(1.20115, 1.20787)
+texture = ExtResource("1_28flt")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 294.0
+offset_right = 189.0
+offset_bottom = 350.0
+text = "PLAY"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 78.0
+offset_top = 381.0
+offset_right = 189.0
+offset_bottom = 437.0
+text = "Options"
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 82.0
+offset_top = 457.0
+offset_right = 193.0
+offset_bottom = 513.0
+text = "Quit
+"
