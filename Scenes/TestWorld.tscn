@@ -15,7 +15,7 @@ data = PackedVector3Array(-15, 0.0725, 15, 15, 0.0725, 15, -15, -0.0725, 15, 15,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0498556, 0, 0.139119)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.400635, 0)
+transform = Transform3D(6.27869, 0, 0, 0, 1, 0, 0, 0, 6.96176, 0, -0.400635, 0)
 mesh = SubResource("BoxMesh_ed2pg")
 skeleton = NodePath("")
 
