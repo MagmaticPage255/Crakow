@@ -32,7 +32,7 @@ shadow_enabled = true
 environment = SubResource("Environment_ed2pg")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(7.30137, 0, 0, 0, 1, 0, 0, 0, 4.16994, 0, -0.400635, 0)
+transform = Transform3D(-2.31415, 0, 0, 0, 0.0822253, 0, 0, 0, 27.458, 0, -0.400635, 0)
 mesh = SubResource("BoxMesh_ed2pg")
 skeleton = NodePath("")
 
@@ -44,8 +44,19 @@ shape = SubResource("ConcavePolygonShape3D_rdsav")
 [node name="FollowCamera" parent="." node_paths=PackedStringArray("follow_target") instance=ExtResource("2_4snwc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.45509, -0.328135, -3.43959)
 follow_target = NodePath("../Car/CarMesh/CameraTarget")
+camera_height = 0.5
+camera_distance = 3.0
 
 [node name="Car" parent="." instance=ExtResource("2_se0eo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.31162, 0.671865, 6.14142)
+
+[node name="CameraTarget" parent="Car/CarMesh" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0.87232, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Car"]
+
+[node name="Label" type="Label" parent="Car/CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [editable path="Car"]

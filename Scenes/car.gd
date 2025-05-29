@@ -1,5 +1,7 @@
 extends RigidBody3D
 
+@onready var speed_label = $CanvasLayer/Label
+
 # Movement parameters for acceleration and speed
 @export_group("Movement")
 @export var acceleration: float = 300.0  # Forward acceleration force (N)
@@ -13,7 +15,7 @@ extends RigidBody3D
 @export var steering: float = 25.0  # Steering angle (degrees)
 @export var turn_speed: float = 6.0  # Turning speed (rad/s)
 @export var turn_stop_limit: float = 0.5  # Minimum speed for turning (m/s)
-@export var body_tilt: float = 25.0  # Maximum body tilt during turns (degrees)
+@export var body_tilt: float = 200.0  # Maximum body tilt during turns (degrees)
 @export var drift_boost: float = 0.2  # Upward force during sharp turns for arcade feel
 
 # Drift parameters for sliding in tight turns
@@ -142,6 +144,11 @@ func _process(delta: float) -> void:
 		var normal = ground_ray.get_collision_normal()
 		var xform = align_with_y(car_mesh.global_transform, normal)
 		car_mesh.global_transform = car_mesh.global_transform.interpolate_with(xform, 10.0 * delta)
+		
+
+	var speed = linear_velocity.length()
+	speed_label.text = "Speed: %.2f m/s" % speed
+
 	#car_mesh.scale = Vector3(1.4,1.4,1.4)
 # Apply physics forces for movement and drift
 func _physics_process(delta: float) -> void:
