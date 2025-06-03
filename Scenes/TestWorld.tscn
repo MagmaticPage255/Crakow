@@ -42,10 +42,11 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_rdsav")
 
 [node name="FollowCamera" parent="." node_paths=PackedStringArray("follow_target") instance=ExtResource("2_4snwc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.45509, -0.328135, -3.43959)
+transform = Transform3D(1, 0, 0, 0, 0.422618, -0.906308, 0, 0.906308, 0.422618, -3.45509, 1.86028, -3.43959)
 follow_target = NodePath("../Car/CarMesh/CameraTarget")
 camera_height = 0.5
 camera_distance = 3.0
+rotation_damping = 0.0
 
 [node name="Car" parent="." instance=ExtResource("2_se0eo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.31162, 0.671865, 6.14142)

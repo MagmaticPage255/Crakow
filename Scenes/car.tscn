@@ -592,7 +592,7 @@ top_level = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.5, 2.08165e-12)
 
 [node name="CameraTarget" type="Marker3D" parent="CarMesh"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.87232, 0)
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0.87232, 0)
 
 [node name="WRR" type="Node3D" parent="CarMesh"]
 transform = Transform3D(0.394656, 0, 0, 0, -1.88187e-07, 0.394656, 0, -0.394656, -1.88187e-07, -0.353789, 0.14917, -0.474106)
