@@ -32,7 +32,7 @@ shadow_enabled = true
 environment = SubResource("Environment_ed2pg")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(-2.31415, 0, 0, 0, 0.0822253, 0, 0, 0, 27.458, 0, -0.400635, 0)
+transform = Transform3D(-2.31415, 0, 0, 0, 0.0822253, 0, 0, 0, 1223, 0, -0.400635, 0)
 mesh = SubResource("BoxMesh_ed2pg")
 skeleton = NodePath("")
 
