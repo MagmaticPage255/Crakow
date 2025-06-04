@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2qf60dilctsk"]
+[gd_scene load_steps=5 format=3 uid="uid://c2qf60dilctsk"]
 
+[ext_resource type="Script" uid="uid://skhm6c5txbqv" path="res://Scenes/main_menu.gd" id="1_1ehe0"]
 [ext_resource type="Texture2D" uid="uid://bu2sl41kohrc1" path="res://Screenshot 2025-05-27 091105.png" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://cf0kyc622v2v" path="res://image-removebg-preview (4).png" id="3_ce3w2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n45e2"]
 
 [node name="Main_menu" type="Control"]
 layout_mode = 3
@@ -9,13 +13,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_1ehe0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(576.25, 324.5)
 scale = Vector2(1.20115, 1.20787)
 texture = ExtResource("1_28flt")
 
-[node name="Button" type="Button" parent="."]
+[node name="Play" type="Button" parent="."]
 layout_mode = 0
 offset_left = 78.0
 offset_top = 294.0
@@ -23,17 +28,30 @@ offset_right = 189.0
 offset_bottom = 350.0
 text = "PLAY"
 
-[node name="Button2" type="Button" parent="."]
+[node name="Options" type="Button" parent="."]
+layout_mode = 0
 offset_left = 78.0
 offset_top = 381.0
 offset_right = 189.0
 offset_bottom = 437.0
 text = "Options"
 
-[node name="Button3" type="Button" parent="."]
+[node name="Qui" type="Button" parent="."]
+layout_mode = 0
 offset_left = 82.0
 offset_top = 457.0
 offset_right = 193.0
 offset_bottom = 513.0
 text = "Quit
 "
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_n45e2")
+
+[node name="Image-removebg-preview(4)" type="Sprite2D" parent="."]
+position = Vector2(406, 137)
+scale = Vector2(0.865027, 1.03355)
+texture = ExtResource("3_ce3w2")
+
+[connection signal="pressed" from="Options" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Qui" to="." method="_on_button_3_pressed"]
