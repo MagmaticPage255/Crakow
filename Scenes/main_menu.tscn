@@ -36,7 +36,7 @@ offset_right = 189.0
 offset_bottom = 437.0
 text = "Options"
 
-[node name="Qui" type="Button" parent="."]
+[node name="Quit" type="Button" parent="."]
 layout_mode = 0
 offset_left = 82.0
 offset_top = 457.0
@@ -53,5 +53,11 @@ position = Vector2(406, 137)
 scale = Vector2(0.865027, 1.03355)
 texture = ExtResource("3_ce3w2")
 
+<<<<<<< Updated upstream
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+=======
 [connection signal="pressed" from="Options" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="Qui" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_button_3_pressed"]
+>>>>>>> Stashed changes
