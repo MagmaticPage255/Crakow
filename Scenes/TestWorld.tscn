@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://c8twif285brwb"]
+[gd_scene load_steps=8 format=3 uid="uid://ctduhr1j60nt5"]
 
 [ext_resource type="PackedScene" uid="uid://rjx8tx5y7j2p" path="res://addons/srcoder_simplecar/follow_camera.tscn" id="2_4snwc"]
-[ext_resource type="PackedScene" uid="uid://dmbnbs7wljdog" path="res://Scenes/car.tscn" id="2_se0eo"]
+[ext_resource type="PackedScene" path="res://Scenes/car.tscn" id="2_se0eo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_se0eo"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
