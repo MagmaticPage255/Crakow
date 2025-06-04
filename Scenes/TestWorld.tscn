@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://c8twif285brwb"]
+
+[ext_resource type="PackedScene" uid="uid://rjx8tx5y7j2p" path="res://addons/srcoder_simplecar/follow_camera.tscn" id="2_4snwc"]
+[ext_resource type="PackedScene" uid="uid://dmbnbs7wljdog" path="res://Scenes/car.tscn" id="2_se0eo"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_se0eo"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_4snwc"]
+sky_material = SubResource("ProceduralSkyMaterial_se0eo")
+
+[sub_resource type="Environment" id="Environment_ed2pg"]
+background_mode = 2
+sky = SubResource("Sky_4snwc")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_ed2pg"]
+size = Vector3(30, 0.145, 30)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_rdsav"]
+data = PackedVector3Array(-15, 0.0725, 15, 15, 0.0725, 15, -15, -0.0725, 15, 15, 0.0725, 15, 15, -0.0725, 15, -15, -0.0725, 15, 15, 0.0725, -15, -15, 0.0725, -15, 15, -0.0725, -15, -15, 0.0725, -15, -15, -0.0725, -15, 15, -0.0725, -15, 15, 0.0725, 15, 15, 0.0725, -15, 15, -0.0725, 15, 15, 0.0725, -15, 15, -0.0725, -15, 15, -0.0725, 15, -15, 0.0725, -15, -15, 0.0725, 15, -15, -0.0725, -15, -15, 0.0725, 15, -15, -0.0725, 15, -15, -0.0725, -15, 15, 0.0725, 15, -15, 0.0725, 15, 15, 0.0725, -15, -15, 0.0725, 15, -15, 0.0725, -15, 15, 0.0725, -15, -15, -0.0725, 15, 15, -0.0725, 15, -15, -0.0725, -15, 15, -0.0725, 15, 15, -0.0725, -15, -15, -0.0725, -15)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ed2pg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.31415, 0, 0, 0, 0.0822253, 0, 0, 0, 1223, 0, -0.400635, 0)
+mesh = SubResource("BoxMesh_ed2pg")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_rdsav")
+
+[node name="FollowCamera" parent="." node_paths=PackedStringArray("follow_target") instance=ExtResource("2_4snwc")]
+transform = Transform3D(1, 0, 0, 0, 0.422618, -0.906308, 0, 0.906308, 0.422618, -3.45509, 1.86028, -3.43959)
+follow_target = NodePath("../Car/CarMesh/CameraTarget")
+camera_height = 0.5
+camera_distance = 3.0
+rotation_damping = 0.0
+
+[node name="Car" parent="." instance=ExtResource("2_se0eo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.31162, 0.671865, 6.14142)
+
+[node name="CameraTarget" parent="Car/CarMesh" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0.87232, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Car"]
+
+[node name="Label" type="Label" parent="Car/CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[editable path="Car"]
