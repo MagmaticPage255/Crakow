@@ -53,11 +53,6 @@ position = Vector2(406, 137)
 scale = Vector2(0.865027, 1.03355)
 texture = ExtResource("3_ce3w2")
 
-<<<<<<< Updated upstream
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
-=======
-[connection signal="pressed" from="Options" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="Quit" to="." method="_on_button_3_pressed"]
->>>>>>> Stashed changes
