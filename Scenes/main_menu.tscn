@@ -38,10 +38,10 @@ text = "Options"
 
 [node name="Quit" type="Button" parent="."]
 layout_mode = 0
-offset_left = 82.0
-offset_top = 457.0
-offset_right = 193.0
-offset_bottom = 513.0
+offset_left = 78.0
+offset_top = 455.0
+offset_right = 189.0
+offset_bottom = 511.0
 text = "Quit
 "
 
