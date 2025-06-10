@@ -18,6 +18,7 @@ scale = Vector2(1.20115, 1.20787)
 texture = ExtResource("1_prnvy")
 
 [node name="Volume" type="HSlider" parent="."]
+layout_mode = 0
 offset_left = 22.0
 offset_top = 23.0
 offset_right = 496.0
@@ -30,11 +31,13 @@ offset_top = 53.0
 offset_right = 258.0
 offset_bottom = 73.0
 selected = 1
-item_count = 2
+item_count = 3
 popup/item_0/text = "1920x1080"
 popup/item_0/id = 0
-popup/item_1/text = "1152x648"
+popup/item_1/text = "1600x900"
 popup/item_1/id = 1
+popup/item_2/text = "1280x720"
+popup/item_2/id = 2
 
 [connection signal="value_changed" from="Volume" to="." method="_on_volume_value_changed"]
 [connection signal="item_selected" from="Resolution" to="." method="_on_resolution_item_selected"]
