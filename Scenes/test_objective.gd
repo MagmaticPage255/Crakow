@@ -4,4 +4,4 @@ extends Area3D
 
 func _on_area_entered(area: Area3D) -> void:
 	if Vehicle_controller:
-		show_objective_complete()
+		pass #FIX THIS
