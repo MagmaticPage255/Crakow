@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://c8twif285brwb"]
+[gd_scene load_steps=9 format=3 uid="uid://c8twif285brwb"]
 
 [ext_resource type="PackedScene" uid="uid://rjx8tx5y7j2p" path="res://addons/srcoder_simplecar/follow_camera.tscn" id="2_4snwc"]
 [ext_resource type="PackedScene" uid="uid://dmbnbs7wljdog" path="res://Scenes/car.tscn" id="2_se0eo"]
-[ext_resource type="Script" uid="uid://cdypf0en8s6d5" path="res://Scenes/test_objective.gd" id="3_ed2pg"]
 [ext_resource type="Script" uid="uid://btdhpoooe6dqb" path="res://Scenes/objective_label.gd" id="4_rdsav"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_se0eo"]
@@ -24,8 +23,6 @@ size = Vector3(30, 0.145, 30)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_rdsav"]
 data = PackedVector3Array(-15, 0.0725, 15, 15, 0.0725, 15, -15, -0.0725, 15, 15, 0.0725, 15, 15, -0.0725, 15, -15, -0.0725, 15, 15, 0.0725, -15, -15, 0.0725, -15, 15, -0.0725, -15, -15, 0.0725, -15, -15, -0.0725, -15, 15, -0.0725, -15, 15, 0.0725, 15, 15, 0.0725, -15, 15, -0.0725, 15, 15, 0.0725, -15, 15, -0.0725, -15, 15, -0.0725, 15, -15, 0.0725, -15, -15, 0.0725, 15, -15, -0.0725, -15, -15, 0.0725, 15, -15, -0.0725, 15, -15, -0.0725, -15, 15, 0.0725, 15, -15, 0.0725, 15, 15, 0.0725, -15, -15, 0.0725, 15, -15, 0.0725, -15, 15, 0.0725, -15, -15, -0.0725, 15, 15, -0.0725, 15, -15, -0.0725, -15, 15, -0.0725, 15, 15, -0.0725, -15, -15, -0.0725, -15)
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_se0eo"]
-
 [node name="Node3D" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -46,11 +43,10 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_rdsav")
 
 [node name="FollowCamera" parent="." node_paths=PackedStringArray("follow_target") instance=ExtResource("2_4snwc")]
-transform = Transform3D(1, 0, 0, 0, 0.422618, -0.906308, 0, 0.906308, 0.422618, -3.45509, 1.86028, -3.43959)
+transform = Transform3D(1, 0, 0, 0, 0.422618, -0.906308, 0, 0.906308, 0.422618, -3.45509, 4.6291, -3.43959)
 follow_target = NodePath("../Car/CarMesh/CameraTarget")
 camera_height = 0.5
 camera_distance = 3.0
-rotation_damping = 0.0
 
 [node name="Car" parent="." instance=ExtResource("2_se0eo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.31162, 0.671865, 6.14142)
@@ -64,14 +60,6 @@ transform = Transform3D(1, 0, 0, 0, 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0.872
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="test_objective" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44438, 2.38419e-07, 0.119873)
-script = ExtResource("3_ed2pg")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="test_objective"]
-shape = SubResource("SphereShape3D_se0eo")
-debug_color = Color(0.846947, 0.284513, 0.628704, 0.42)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ObjectiveLabel" type="Label" parent="CanvasLayer"]
@@ -82,7 +70,5 @@ offset_right = 876.0
 offset_bottom = 442.0
 text = "OBJECTIVE COMPLETE"
 script = ExtResource("4_rdsav")
-
-[connection signal="area_entered" from="test_objective" to="test_objective" method="_on_area_entered"]
 
 [editable path="Car"]
