@@ -26,9 +26,7 @@ extends RigidBody3D
 @export var drift_tilt_multiplier: float = 1.5  # Extra body tilt during drift
 
 # Jump parameters for aerial mechanics
-@export_group("Jump")
-@export var jump_force: float = 500.0  # Upward impulse for jumps (N)
-@export var jump_cooldown: float = 0.5  # Cooldown between jumps (seconds)
+
 
 # Physics parameters for mass and damping
 @export_group("Physics")
@@ -116,10 +114,7 @@ func _process(delta: float) -> void:
 		if left_wheel:
 			left_wheel.rotation.y = turn_input
 		
-		# Handle jump input
-		if Input.is_action_just_pressed("jump") and jump_timer <= 0.0:
-			apply_central_impulse(Vector3.UP * jump_force)
-			jump_timer = jump_cooldown
+
 	
 	# Update jump cooldown
 	if jump_timer > 0.0:
