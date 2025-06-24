@@ -11,6 +11,7 @@ var current_rotation := Vector2.ZERO
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
+
 func _input(event):
 	print("mouse move")
 	if event is InputEventMouseMotion:

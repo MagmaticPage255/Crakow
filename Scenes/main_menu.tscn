@@ -53,5 +53,14 @@ position = Vector2(406, 137)
 scale = Vector2(0.865027, 1.03355)
 texture = ExtResource("3_ce3w2")
 
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 267.0
+offset_top = 310.0
+offset_right = 523.0
+offset_bottom = 470.0
+text = "Play Shooter"
+
 [connection signal="pressed" from="Options" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Qui" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
