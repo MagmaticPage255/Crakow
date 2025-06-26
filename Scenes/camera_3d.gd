@@ -13,7 +13,7 @@ func _ready():
 
 
 func _input(event):
-	print("mouse move")
+
 	if event is InputEventMouseMotion:
 		target_rotation.x -= event.relative.x * sensitivity
 		target_rotation.y -= event.relative.y * sensitivity

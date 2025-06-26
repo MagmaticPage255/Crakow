@@ -1,9 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://1pbjm1coyosu"]
+[gd_scene load_steps=8 format=3 uid="uid://1pbjm1coyosu"]
 
-[ext_resource type="Script" uid="uid://dgf5erriaf2mv" path="res://addons/shooter_kit/ShooterKit3D.gd" id="1_fn17n"]
-[ext_resource type="Script" uid="uid://jcb2rq7yg6im" path="res://Scenes/camera_3d.gd" id="1_opjq2"]
 [ext_resource type="PackedScene" uid="uid://bgmqf5vr2c8uq" path="res://Models/TestSceneModel.glb" id="1_y2a1g"]
+[ext_resource type="PackedScene" uid="uid://c0yhtsxh5iud2" path="res://FPSPlayer.tscn" id="2_y2a1g"]
 [ext_resource type="PackedScene" uid="uid://ccyqyxj3knao7" path="res://Scenes/low_poly_car.glb" id="3_fv1fa"]
+[ext_resource type="PackedScene" uid="uid://cwvp52ow2qaji" path="res://Scenes/enemy.tscn" id="5_e1ajo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_opjq2"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -18,47 +18,6 @@ sky = SubResource("Sky_fv1fa")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_y2a1g"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e1ajo"]
-
-[sub_resource type="Animation" id="Animation_y2a1g"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0.623137, -0.22778)]
-}
-
-[sub_resource type="Animation" id="Animation_fv1fa"]
-resource_name = "duck"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0.623137, -0.22778), Vector3(0, -0.367, -0.228)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_e1ajo"]
-_data = {
-&"RESET": SubResource("Animation_y2a1g"),
-&"duck": SubResource("Animation_fv1fa")
-}
-
 [node name="Node3D" type="Node3D"]
 
 [node name="TestSceneModel" parent="." instance=ExtResource("1_y2a1g")]
@@ -71,29 +30,11 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_y2a1g")
 
-[node name="Player" type="CharacterBody3D" parent="."]
+[node name="Player" parent="." instance=ExtResource("2_y2a1g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01296, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
-mesh = SubResource("CapsuleMesh_y2a1g")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
-shape = SubResource("CapsuleShape3D_e1ajo")
-
-[node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.623137, -0.22778)
-script = ExtResource("1_opjq2")
-smoothing = 0.4
-
-[node name="ShooterKit3D" type="Node3D" parent="Player/Camera3D" node_paths=PackedStringArray("CameraReference")]
-script = ExtResource("1_fn17n")
-CameraReference = NodePath("..")
-metadata/_custom_type_script = "uid://dgf5erriaf2mv"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player/Camera3D"]
-libraries = {
-&"": SubResource("AnimationLibrary_e1ajo")
-}
 
 [node name="low_poly_car" parent="." instance=ExtResource("3_fv1fa")]
 transform = Transform3D(0.530616, 0, -2.23281, 0, 2.39486, 0, 2.23281, 0, 0.530616, 0.0328552, -0.100589, -1.8868)
+
+[node name="Enemy" parent="." instance=ExtResource("5_e1ajo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1153, 0.838369, -5.93571)

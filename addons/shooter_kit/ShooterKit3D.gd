@@ -117,6 +117,8 @@ func __ProjectileFire():
 func __traceFire():	
 	if rayCast.is_colliding():
 		var colider = rayCast.get_collider()
+		print(colider.name)
+		
 		var colisionPosition = rayCast.get_collision_point()
 		if colider:		
 			__impactEffect(colisionPosition)
