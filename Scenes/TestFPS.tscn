@@ -20,6 +20,12 @@ glow_enabled = true
 
 [node name="Node3D" type="Node3D"]
 
+[node name="Enemy3" parent="." instance=ExtResource("5_e1ajo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.20323, 0.838369, -20.5392)
+
+[node name="Enemy2" parent="." instance=ExtResource("5_e1ajo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.84084, 0.850643, -11.4046)
+
 [node name="TestSceneModel" parent="." instance=ExtResource("1_y2a1g")]
 transform = Transform3D(-0.961354, 0, 8.77589e-08, 0, 1.22066, 0, -8.40443e-08, 0, -1.00384, -0.755856, -0.340079, -28.7468)
 

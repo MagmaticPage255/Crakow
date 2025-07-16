@@ -28,6 +28,7 @@ signal Shoot
 @export var CameraReference : Camera3D
 @export var FovLevelAim : float = 40
 
+
 var hud : AimHud
 var cadenceTimer : float = 0
 var rayCast : RayCast3D
@@ -118,7 +119,9 @@ func __traceFire():
 	if rayCast.is_colliding():
 		var colider = rayCast.get_collider()
 		print(colider.name)
-		
+		if colider.is_in_group("Enemy"):
+			print("Enemy Hit")
+			colider.get_owner().hit()
 		var colisionPosition = rayCast.get_collision_point()
 		if colider:		
 			__impactEffect(colisionPosition)

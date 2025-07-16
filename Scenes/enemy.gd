@@ -20,4 +20,4 @@ func _on_timer_timeout() -> void:
 
 func hit():
 	timer.stop()
-	animation.play
+	animation_player.play("StandingReactDeathBackward")
