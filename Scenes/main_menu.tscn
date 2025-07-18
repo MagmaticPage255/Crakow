@@ -16,17 +16,17 @@ grow_vertical = 2
 script = ExtResource("1_1ehe0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(576.25, 324.5)
-scale = Vector2(1.20115, 1.20787)
+position = Vector2(964.25, 548.999)
+scale = Vector2(2.01202, 2.04869)
 texture = ExtResource("1_28flt")
 
 [node name="Play" type="Button" parent="."]
 layout_mode = 0
-offset_left = 78.0
-offset_top = 294.0
-offset_right = 189.0
-offset_bottom = 350.0
-text = "PLAY"
+offset_left = 579.0
+offset_top = 436.0
+offset_right = 1028.0
+offset_bottom = 827.0
+text = "PLAY Driver"
 
 [node name="Options" type="Button" parent="."]
 layout_mode = 0
@@ -55,12 +55,13 @@ texture = ExtResource("3_ce3w2")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 267.0
-offset_top = 310.0
-offset_right = 523.0
-offset_bottom = 470.0
+offset_left = 1188.0
+offset_top = 432.0
+offset_right = 1607.0
+offset_bottom = 787.0
 text = "Play Shooter"
 
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Options" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Qui" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
