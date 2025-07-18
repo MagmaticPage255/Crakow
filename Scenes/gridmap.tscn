@@ -1,16 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c751idq6jnnc"]
+[gd_scene load_steps=2 format=3 uid="uid://c751idq6jnnc"]
 
-[ext_resource type="PackedScene" uid="uid://dmbnbs7wljdog" path="res://Scenes/car.tscn" id="1_vrrve"]
-[ext_resource type="PackedScene" uid="uid://csxp23hibiy1y" path="res://Scenes/City.glb" id="2_huwcs"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_n6joo"]
+[ext_resource type="MeshLibrary" uid="uid://bm4hxpf53hsx4" path="res://Gridmap_tiles/tiles.tres" id="1_xg6cx"]
 
 [node name="Node3D" type="Node3D"]
 
-[node name="Car" parent="." instance=ExtResource("1_vrrve")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.407663, 0, 4.06682)
-
 [node name="GridMap" type="GridMap" parent="."]
-physics_material = SubResource("PhysicsMaterial_n6joo")
-
-[node name="City" parent="GridMap" instance=ExtResource("2_huwcs")]
+mesh_library = ExtResource("1_xg6cx")
