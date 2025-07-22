@@ -1,8 +1,11 @@
 [gd_scene load_steps=2 format=3 uid="uid://c751idq6jnnc"]
 
-[ext_resource type="MeshLibrary" uid="uid://bm4hxpf53hsx4" path="res://Gridmap_tiles/tiles.tres" id="1_xg6cx"]
+[ext_resource type="MeshLibrary" uid="uid://cpvphvv7a5pen" path="res://Gridmap_tiles/tiles.tres" id="1_xg6cx"]
 
 [node name="Node3D" type="Node3D"]
 
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = ExtResource("1_xg6cx")
+data = {
+"cells": PackedInt32Array(3, 11, 4, 3, 8, 8, 3, 6, 8, 5, 4, 1441800, 7, 4, 1441800, 9, 4, 1441800, 11, 4, 1441800, 14, 4, 1441798, 17, 4, 1441798, 16, 0, 1441797, 11, 0, 1441797, 9, 8, 1441804, 4, 0, 1441794)
+}
