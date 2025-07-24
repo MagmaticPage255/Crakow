@@ -1,8 +1,48 @@
-[gd_scene load_steps=2 format=3 uid="uid://c751idq6jnnc"]
+[gd_scene load_steps=5 format=3 uid="uid://c751idq6jnnc"]
 
 [ext_resource type="MeshLibrary" uid="uid://cpvphvv7a5pen" path="res://Gridmap_tiles/tiles.tres" id="1_xg6cx"]
+[ext_resource type="PackedScene" uid="uid://rjx8tx5y7j2p" path="res://addons/srcoder_simplecar/follow_camera.tscn" id="2_huwcs"]
+[ext_resource type="PackedScene" uid="uid://dmbnbs7wljdog" path="res://Scenes/car.tscn" id="3_n6joo"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_75t0e"]
 
 [node name="Node3D" type="Node3D"]
 
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = ExtResource("1_xg6cx")
+data = {
+"cells": PackedInt32Array(1, 11, 4, 1, 7, 4, 7, 7, 655364, 7, 11, 655364, 7, 3, 655364, 9, 3, 4, 9, 7, 4, 9, 11, 4, 1, 3, 4, 65535, 3, 655364, 65535, 7, 655364, 65535, 11, 655364, 1, 65531, 4, 65535, 65531, 655364, 65535, 65527, 655364, 1, 65527, 4, 1, 65523, 4, 65535, 65523, 655364, 7, 65531, 655364, 7, 65527, 655364, 7, 65523, 655364, 9, 65531, 4, 9, 65527, 4, 9, 65523, 4, 65529, 65531, 4, 65527, 65531, 655364, 65527, 65527, 655364, 65527, 65523, 655364, 65529, 65523, 4, 65529, 65527, 4, 65519, 65527, 3, 65529, 9, 0)
+}
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(184.816, 0, 0, 0, 1, 0, 0, 0, 247.15, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_75t0e")
+
+[node name="FollowCamera" parent="." node_paths=PackedStringArray("follow_target") instance=ExtResource("2_huwcs")]
+transform = Transform3D(1, 0, 0, 0, 0.422618, -0.906308, 0, 0.906308, 0.422618, -3.45509, 4.6291, -3.43959)
+follow_target = NodePath("")
+camera_height = 0.5
+camera_distance = 3.0
+rotation_damping = 0.0
+
+[node name="Car" parent="." instance=ExtResource("3_n6joo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.31162, 0.671865, 6.14142)
+
+[node name="CameraTarget" parent="Car/CarMesh" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0.87232, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Car"]
+
+[node name="Label" type="Label" parent="Car/CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="ObjectiveLabel" type="Label" parent="Car/CanvasLayer"]
+visible = false
+offset_left = 467.0
+offset_top = 292.0
+offset_right = 876.0
+offset_bottom = 442.0
+text = "OBJECTIVE COMPLETE"
+
+[editable path="Car"]
