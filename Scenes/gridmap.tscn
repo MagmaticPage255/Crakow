@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c751idq6jnnc"]
+[gd_scene load_steps=6 format=3 uid="uid://c751idq6jnnc"]
 
 [ext_resource type="PackedScene" uid="uid://br0yajoxonhq4" path="res://Gridmap_tiles/RoadE.glb" id="2_n6joo"]
 [ext_resource type="PackedScene" uid="uid://ccyqyxj3knao7" path="res://Scenes/low_poly_car.glb" id="2_vrrve"]
 [ext_resource type="PackedScene" uid="uid://dgrqf4y1klb3n" path="res://Gridmap_tiles/RoadD.glb" id="3_75t0e"]
 [ext_resource type="PackedScene" uid="uid://6jkxddtbvyg4" path="res://Gridmap_tiles/Apartment.glb" id="4_onagr"]
+[ext_resource type="PackedScene" uid="uid://b2jrin4wl0110" path="res://Gridmap_tiles/ShoppingCenter.glb" id="5_75t0e"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -382,31 +383,31 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -9.272
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10.2543, 1.46031e-06, -13.2416)
 
 [node name="RoadE169" parent="." instance=ExtResource("2_n6joo")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15.2543, 1.46031e-06, -13.2416)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15.2235, 2.98023e-08, -13.2417)
 
 [node name="RoadE170" parent="." instance=ExtResource("2_n6joo")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -16.2543, 1.46031e-06, -13.2416)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -16.2057, 2.98023e-08, -13.2417)
 
 [node name="RoadE171" parent="." instance=ExtResource("2_n6joo")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -17.2543, 1.46031e-06, -13.2416)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -17.1879, 2.98023e-08, -13.2417)
 
 [node name="RoadE172" parent="." instance=ExtResource("2_n6joo")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -18.2543, 1.46031e-06, -13.2416)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -18.1701, 2.97986e-08, -13.2417)
 
 [node name="RoadE173" parent="." instance=ExtResource("2_n6joo")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -19.2543, 1.46031e-06, -13.2416)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -19.1523, 2.97986e-08, -13.2417)
 
 [node name="RoadE174" parent="." instance=ExtResource("2_n6joo")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -20.2543, 1.46031e-06, -13.2416)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -20.1345, 2.97986e-08, -13.2417)
 
 [node name="RoadE175" parent="." instance=ExtResource("2_n6joo")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -21.2543, 1.46031e-06, -13.2416)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -21.1167, 2.97986e-08, -13.2417)
 
 [node name="RoadE176" parent="." instance=ExtResource("2_n6joo")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -22.2543, 1.46031e-06, -13.2416)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -22.0989, 2.97986e-08, -13.2417)
 
 [node name="RoadE177" parent="." instance=ExtResource("2_n6joo")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -23.2543, 1.46031e-06, -13.2416)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -23.0811, 2.97986e-08, -13.2417)
 
 [node name="RoadE78" parent="." instance=ExtResource("2_n6joo")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.4019, -1.41561e-06, 19.5672)
@@ -547,13 +548,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0026015, 0.00268076, -13.24
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8216, 0.00268075, -13.2416)
 
 [node name="RoadD8" parent="." instance=ExtResource("3_75t0e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.8216, 0.00268075, -13.2416)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.6458, 0.00268076, -13.2416)
 
 [node name="RoadD5" parent="." instance=ExtResource("3_75t0e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8242, 0.00267932, 19.5673)
 
+[node name="RoadD9" parent="." instance=ExtResource("3_75t0e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.8242, 0.00267932, 19.5673)
+
 [node name="RoadD6" parent="." instance=ExtResource("3_75t0e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8268, 0.00267789, 51.5364)
+
+[node name="RoadD10" parent="." instance=ExtResource("3_75t0e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.651, 0.00267788, 51.5364)
 
 [node name="RoadD7" parent="." instance=ExtResource("3_75t0e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00260007, 0.00267789, 51.5364)
@@ -572,3 +579,6 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -7.655
 
 [node name="Apartment4" parent="." instance=ExtResource("4_onagr")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -7.6556, 0.32269, -7.7895)
+
+[node name="ShoppingCenter" parent="." instance=ExtResource("5_75t0e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 31)
