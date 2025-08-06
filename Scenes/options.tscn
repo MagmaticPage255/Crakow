@@ -1,9 +1,55 @@
-[gd_scene format=3 uid="uid://b4bhlhmuq7jx1"]
+[gd_scene load_steps=2 format=3 uid="uid://b4bhlhmuq7jx1"]
+
+[ext_resource type="Script" uid="uid://djkkcjr23f6i0" path="res://options.gd" id="1_prnvy"]
 
 [node name="Options" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 34.0
+offset_top = 9.0
+offset_right = 34.0
+offset_bottom = 9.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_prnvy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -15.0
+offset_top = 70.0
+offset_right = 338.0
+offset_bottom = 127.0
+
+[node name="Master" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Master"
+
+[node name="Master_Slider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+max_value = 1.5
+step = 0.001
+value = 1.5
+
+[node name="Music" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Music"
+
+[node name="Music_slider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+max_value = 1.5
+step = 0.001
+value = 1.5
+
+[node name="Back_Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = -23.0
+offset_top = 767.0
+offset_right = 442.0
+offset_bottom = 1060.0
+text = "Back"
+
+[connection signal="value_changed" from="VBoxContainer/Master_Slider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/Music_slider" to="." method="_on_music_slider_value_changed"]
+[connection signal="pressed" from="Back_Button" to="." method="_on_back_button_pressed"]

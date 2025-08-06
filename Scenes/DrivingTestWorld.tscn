@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://ctduhr1j60nt5"]
 
-[ext_resource type="PackedScene" uid="uid://rjx8tx5y7j2p" path="res://addons/srcoder_simplecar/follow_camera.tscn" id="2_4snwc"]
-[ext_resource type="PackedScene" path="res://Scenes/car.tscn" id="2_se0eo"]
+[ext_resource type="PackedScene" uid="uid://rjx8tx5y7j2p" path="res://addons/srcoder_simplecar/follow_camera.tscn" id="1_wuf53"]
+[ext_resource type="PackedScene" path="res://Scenes/car.tscn" id="2_5mkc4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_se0eo"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -41,14 +41,14 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_rdsav")
 
-[node name="FollowCamera" parent="." node_paths=PackedStringArray("follow_target") instance=ExtResource("2_4snwc")]
+[node name="FollowCamera" parent="." node_paths=PackedStringArray("follow_target") instance=ExtResource("1_wuf53")]
 transform = Transform3D(1, 0, 0, 0, 0.422618, -0.906308, 0, 0.906308, 0.422618, -3.45509, 1.86028, -3.43959)
 follow_target = NodePath("../Car/CarMesh/CameraTarget")
 camera_height = 0.5
 camera_distance = 3.0
 rotation_damping = 0.0
 
-[node name="Car" parent="." instance=ExtResource("2_se0eo")]
+[node name="Car" parent="." instance=ExtResource("2_5mkc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.31162, 0.671865, 6.14142)
 
 [node name="CameraTarget" parent="Car/CarMesh" index="1"]

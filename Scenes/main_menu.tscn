@@ -1,8 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2qf60dilctsk"]
+[gd_scene load_steps=9 format=3 uid="uid://c2qf60dilctsk"]
 
 [ext_resource type="Script" uid="uid://skhm6c5txbqv" path="res://Scenes/main_menu.gd" id="1_1ehe0"]
 [ext_resource type="Texture2D" uid="uid://bu2sl41kohrc1" path="res://Screenshot 2025-05-27 091105.png" id="1_28flt"]
 [ext_resource type="Texture2D" uid="uid://cf0kyc622v2v" path="res://image-removebg-preview (4).png" id="3_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://bxv02msx2mede" path="res://Scenes/Screenshot 2025-07-30 144958.png" id="3_opfnp"]
+[ext_resource type="AudioStream" uid="uid://cuegk1nmpm3k3" path="res://Scenes/Karl Casey - White Bat 45 - 01 Eaters of the Dead.mp3" id="4_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://dku06ye032f2r" path="res://Scenes/fgwreafavfbfagreafagfgea.png" id="4_cp0ys"]
+[ext_resource type="Texture2D" uid="uid://dht0k47j218uh" path="res://Scenes/Screenshot 2025-07-30 143112.png" id="5_cp0ys"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n45e2"]
 
@@ -30,20 +34,23 @@ text = "PLAY Driver"
 
 [node name="Options" type="Button" parent="."]
 layout_mode = 0
-offset_left = 78.0
-offset_top = 381.0
-offset_right = 189.0
-offset_bottom = 437.0
-text = "Options"
+offset_left = 51.0
+offset_top = 373.0
+offset_right = 269.0
+offset_bottom = 442.0
+icon = ExtResource("3_opfnp")
+expand_icon = true
 
-[node name="Qui" type="Button" parent="."]
+[node name="Quit" type="Button" parent="."]
 layout_mode = 0
 offset_left = 82.0
 offset_top = 457.0
 offset_right = 193.0
 offset_bottom = 513.0
-text = "Quit
+text = "
 "
+icon = ExtResource("4_cp0ys")
+expand_icon = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_n45e2")
@@ -55,13 +62,19 @@ texture = ExtResource("3_ce3w2")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1188.0
-offset_top = 432.0
-offset_right = 1607.0
-offset_bottom = 787.0
-text = "Play Shooter"
+offset_left = 56.0
+offset_top = 242.0
+offset_right = 269.0
+offset_bottom = 364.0
+icon = ExtResource("5_cp0ys")
+expand_icon = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ce3w2")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Options" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="Qui" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dyi6bp31cpbmv"
+path="res://.godot/imported/Death Grips - Exmilitary - 12 - I Want it I need it (Death Heated).mp3-dd3ffc50a213e703cce4ee3659699a74.mp3str"
+
+[deps]
+
+source_file="res://Scenes/Death Grips - Exmilitary - 12 - I Want it I need it (Death Heated).mp3"
+dest_files=["res://.godot/imported/Death Grips - Exmilitary - 12 - I Want it I need it (Death Heated).mp3-dd3ffc50a213e703cce4ee3659699a74.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
