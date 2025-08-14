@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://rjx8tx5y7j2p"]
 
-[ext_resource type="Script" path="res://addons/srcoder_simplecar/assets/scripts/follow_camera.gd" id="1_1bo7l"]
+[ext_resource type="Script" uid="uid://nnyxntheek42" path="res://addons/srcoder_simplecar/assets/scripts/follow_camera.gd" id="1_1bo7l"]
 
 [node name="FollowCamera" type="Node3D"]
 script = ExtResource("1_1bo7l")
