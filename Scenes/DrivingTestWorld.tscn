@@ -1,8 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c8twif285brwb"]
-
-[ext_resource type="PackedScene" uid="uid://rjx8tx5y7j2p" path="res://addons/srcoder_simplecar/follow_camera.tscn" id="1_5mkc4"]
-[ext_resource type="PackedScene" uid="uid://dmbnbs7wljdog" path="res://Scenes/car.tscn" id="2_2fe53"]
-[ext_resource type="PackedScene" uid="uid://c6n3y2kgmio3h" path="res://Scenes/test_objective.tscn" id="3_m1ypu"]
+[gd_scene load_steps=6 format=3 uid="uid://c8twif285brwb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_se0eo"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -41,37 +37,3 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_rdsav")
-
-[node name="FollowCamera" parent="." node_paths=PackedStringArray("follow_target") instance=ExtResource("1_5mkc4")]
-transform = Transform3D(1, 0, 0, 0, 0.422618, -0.906308, 0, 0.906308, 0.422618, -3.45509, 4.6291, -3.43959)
-follow_target = NodePath("../Car/CarMesh/CameraTarget")
-camera_height = 0.5
-camera_distance = 3.0
-rotation_damping = 0.0
-
-[node name="Car" parent="." instance=ExtResource("2_2fe53")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.31162, 0.671865, 6.14142)
-
-[node name="CameraTarget" parent="Car/CarMesh" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0.87232, 0)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="Car"]
-
-[node name="Label" type="Label" parent="Car/CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 23.0
-
-[node name="ObjectiveLabel" type="Label" parent="Car/CanvasLayer"]
-visible = false
-offset_left = 467.0
-offset_top = 292.0
-offset_right = 876.0
-offset_bottom = 442.0
-text = "OBJECTIVE COMPLETE"
-
-[node name="test_objective" parent="." instance=ExtResource("3_m1ypu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.643, 9.53674e-07, 37.3364)
-
-[connection signal="body_entered" from="Car" to="test_objective" method="_on_car_body_entered"]
-
-[editable path="Car"]
