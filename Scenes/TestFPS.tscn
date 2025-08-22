@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://1pbjm1coyosu"]
+[gd_scene load_steps=9 format=3 uid="uid://1pbjm1coyosu"]
 
 [ext_resource type="PackedScene" uid="uid://bgmqf5vr2c8uq" path="res://Models/TestSceneModel.glb" id="1_y2a1g"]
 [ext_resource type="PackedScene" uid="uid://c0yhtsxh5iud2" path="res://FPSPlayer.tscn" id="2_y2a1g"]
 [ext_resource type="PackedScene" uid="uid://ccyqyxj3knao7" path="res://Scenes/low_poly_car.glb" id="3_fv1fa"]
+[ext_resource type="PackedScene" uid="uid://78gufb7hot3n" path="res://assets/Buildings_For_SAM.glb" id="5_62k2n"]
 [ext_resource type="PackedScene" uid="uid://cwvp52ow2qaji" path="res://Scenes/enemy.tscn" id="5_e1ajo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_opjq2"]
@@ -21,7 +22,7 @@ glow_enabled = true
 [node name="Node3D" type="Node3D"]
 
 [node name="Enemy3" parent="." instance=ExtResource("5_e1ajo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.20323, 0.838369, -20.5392)
+transform = Transform3D(2.4, 0, 0, 0, 2.4, 0, 0, 0, 2.4, -36.5966, 180.66, 705.088)
 
 [node name="Enemy2" parent="." instance=ExtResource("5_e1ajo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.84084, 0.850643, -11.4046)
@@ -37,10 +38,19 @@ shadow_enabled = true
 environment = SubResource("Environment_y2a1g")
 
 [node name="Player" parent="." instance=ExtResource("2_y2a1g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01296, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.4226, 180.755, 724.847)
 
 [node name="low_poly_car" parent="." instance=ExtResource("3_fv1fa")]
 transform = Transform3D(0.530616, 0, -2.23281, 0, 2.39486, 0, 2.23281, 0, 0.530616, 0.0328552, -0.100589, -1.8868)
 
 [node name="Enemy" parent="." instance=ExtResource("5_e1ajo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1153, 0.838369, -5.93571)
+
+[node name="Buildings_For_SAM2" parent="." instance=ExtResource("5_62k2n")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -21.6353, 178.429, 714.199)
+
+[node name="Enemy4" parent="." instance=ExtResource("5_e1ajo")]
+transform = Transform3D(2.34, 0, 0, 0, 2.34, 0, 0, 0, 2.34, -45.8929, 181.027, 703.504)
+
+[node name="Enemy5" parent="." instance=ExtResource("5_e1ajo")]
+transform = Transform3D(2.46, 0, 0, 0, 2.46, 0, 0, 0, 2.46, -30.7716, 180.863, 696.993)
