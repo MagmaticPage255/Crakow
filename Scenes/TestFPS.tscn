@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://1pbjm1coyosu"]
+[gd_scene load_steps=10 format=3 uid="uid://1pbjm1coyosu"]
 
 [ext_resource type="PackedScene" uid="uid://bgmqf5vr2c8uq" path="res://Models/TestSceneModel.glb" id="1_y2a1g"]
 [ext_resource type="PackedScene" uid="uid://c0yhtsxh5iud2" path="res://FPSPlayer.tscn" id="2_y2a1g"]
 [ext_resource type="PackedScene" uid="uid://ccyqyxj3knao7" path="res://Scenes/low_poly_car.glb" id="3_fv1fa"]
 [ext_resource type="PackedScene" uid="uid://78gufb7hot3n" path="res://assets/Buildings_For_SAM.glb" id="5_62k2n"]
 [ext_resource type="PackedScene" uid="uid://cwvp52ow2qaji" path="res://Scenes/enemy.tscn" id="5_e1ajo"]
+[ext_resource type="PackedScene" uid="uid://dj4f7tca1m2ow" path="res://Scenes/Pause_Menu.tscn" id="6_62k2n"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_opjq2"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -54,3 +55,7 @@ transform = Transform3D(2.34, 0, 0, 0, 2.34, 0, 0, 0, 2.34, -45.8929, 181.027, 7
 
 [node name="Enemy5" parent="." instance=ExtResource("5_e1ajo")]
 transform = Transform3D(2.46, 0, 0, 0, 2.46, 0, 0, 0, 2.46, -30.7716, 180.863, 696.993)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause_Menu" parent="CanvasLayer" instance=ExtResource("6_62k2n")]
