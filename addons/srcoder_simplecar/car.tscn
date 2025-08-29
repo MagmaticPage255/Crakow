@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d00a8fn18o6y3" path="res://addons/srcoder_simplecar/assets/models/Textures/colormap.png" id="1_n0mcw"]
 [ext_resource type="PhysicsMaterial" uid="uid://cuw7isymmyyku" path="res://addons/srcoder_simplecar/assets/materials/metal_physics_material.phymat" id="1_vukum"]
-[ext_resource type="Script" path="res://addons/srcoder_simplecar/assets/scripts/car.gd" id="1_ymx53"]
+[ext_resource type="Script" uid="uid://c4uut8taw3rcx" path="res://addons/srcoder_simplecar/assets/scripts/car.gd" id="1_ymx53"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bwqi7"]
 resource_name = "colormap"

@@ -1,9 +1,6 @@
-[gd_scene load_steps=45 format=4 uid="uid://dmbnbs7wljdog"]
+[gd_scene load_steps=44 format=4 uid="uid://dmbnbs7wljdog"]
 
 [ext_resource type="Script" uid="uid://c6irvb6c0s8oe" path="res://Scenes/car.gd" id="1_wqo35"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_dtpcx"]
-bounce = 0.1
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ywja5"]
 radius = 1.0
@@ -566,17 +563,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_d6uq1")
 
-[node name="Car" type="RigidBody3D" node_paths=PackedStringArray("car_mesh", "body_mesh", "left_wheel", "right_wheel", "ground_ray") groups=["player"]]
+[node name="Car" type="CharacterBody3D" groups=["player"]]
 collision_layer = 2
-physics_material_override = SubResource("PhysicsMaterial_dtpcx")
-gravity_scale = 3.0
-angular_damp = 10.0
 script = ExtResource("1_wqo35")
-car_mesh = NodePath("CarMesh")
-body_mesh = NodePath("CarMesh/CarBody")
-left_wheel = NodePath("CarMesh/WFL")
-right_wheel = NodePath("CarMesh/WFR")
-ground_ray = NodePath("CarMesh/RayCast3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_ywja5")
@@ -586,7 +575,6 @@ visible = false
 mesh = SubResource("SphereMesh_00jmq")
 
 [node name="CarMesh" type="Node3D" parent="."]
-top_level = true
 
 [node name="RayCast3D" type="RayCast3D" parent="CarMesh"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.5, 2.08165e-12)

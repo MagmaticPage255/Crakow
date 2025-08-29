@@ -17,9 +17,9 @@ func _ready() -> void:
 	springarm.spring_length = camera_distance
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _physics_process(delta: float) -> void:
-#	global_position = follow_target.global_position
-#	var target_horizontal_direction = follow_target.global_basis.z.slide(Vector3.UP).normalized()
-#	var desired_basis = Basis.looking_at(-target_horizontal_direction)
-#	global_basis = global_basis.slerp(desired_basis,rotation_damping*delta)
+ #Called every frame. 'delta' is the elapsed time since the previous frame.
+func _physics_process(delta: float) -> void:
+	global_position = follow_target.global_position
+	var target_horizontal_direction = follow_target.global_basis.z.slide(Vector3.UP).normalized()
+	var desired_basis = Basis.looking_at(-target_horizontal_direction)
+	global_basis = global_basis.slerp(desired_basis,rotation_damping*delta)
