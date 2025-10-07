@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://1pbjm1coyosu"]
+[gd_scene load_steps=12 format=3 uid="uid://1pbjm1coyosu"]
 
 [ext_resource type="PackedScene" uid="uid://bgmqf5vr2c8uq" path="res://Models/TestSceneModel.glb" id="1_y2a1g"]
 [ext_resource type="PackedScene" uid="uid://c0yhtsxh5iud2" path="res://FPSPlayer.tscn" id="2_y2a1g"]
@@ -20,13 +20,22 @@ sky = SubResource("Sky_fv1fa")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_62k2n"]
+vertices = PackedVector3Array(-94.9052, 110.743, 643.713, -94.9052, 110.743, 742.713, 4.0948, 110.743, 742.713, 4.0948, 110.743, 643.713)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+cell_height = 1.7
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_hl4ln"]
+
 [node name="Node3D" type="Node3D"]
 
 [node name="Enemy3" parent="." instance=ExtResource("5_e1ajo")]
 transform = Transform3D(2.4, 0, 0, 0, 2.4, 0, 0, 0, 2.4, -36.5966, 180.66, 705.088)
+reaction_time = null
 
 [node name="Enemy2" parent="." instance=ExtResource("5_e1ajo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.84084, 0.850643, -11.4046)
+reaction_time = null
 
 [node name="TestSceneModel" parent="." instance=ExtResource("1_y2a1g")]
 transform = Transform3D(-0.961354, 0, 8.77589e-08, 0, 1.22066, 0, -8.40443e-08, 0, -1.00384, -0.755856, -0.340079, -28.7468)
@@ -46,16 +55,38 @@ transform = Transform3D(0.530616, 0, -2.23281, 0, 2.39486, 0, 2.23281, 0, 0.5306
 
 [node name="Enemy" parent="." instance=ExtResource("5_e1ajo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1153, 0.838369, -5.93571)
+reaction_time = null
 
 [node name="Buildings_For_SAM2" parent="." instance=ExtResource("5_62k2n")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -21.6353, 178.429, 714.199)
 
 [node name="Enemy4" parent="." instance=ExtResource("5_e1ajo")]
 transform = Transform3D(2.34, 0, 0, 0, 2.34, 0, 0, 0, 2.34, -45.8929, 181.027, 703.504)
+reaction_time = null
 
 [node name="Enemy5" parent="." instance=ExtResource("5_e1ajo")]
 transform = Transform3D(2.46, 0, 0, 0, 2.46, 0, 0, 0, 2.46, -30.7716, 180.863, 696.993)
+reaction_time = null
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Pause_Menu" parent="CanvasLayer" instance=ExtResource("6_62k2n")]
+offset_left = 6.0
+offset_top = 11.0
+offset_bottom = 6.0
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 69.9073, 0)
+navigation_mesh = SubResource("NavigationMesh_62k2n")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.4052, 107.843, 693.213)
+use_collision = true
+size = Vector3(100, 1, 100)
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.4701, 180.247, 688.063)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.63818)
+shape = SubResource("SphereShape3D_hl4ln")
