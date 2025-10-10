@@ -27,10 +27,10 @@ func _ready():
 	animation_player.play("SadIdle")
 	timer.start()
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_accept"):
-		var random_position := Vector3.ZERO
-		random_position.z = randf_range()
+#func _unhandled_input(event: InputEvent) -> void:
+#	if event.is_action_pressed("ui_accept"):
+#		var random_position := Vector3.ZERO
+#		random_position.z = randf_range()
 
 
 func _on_timer_timeout() -> void:
